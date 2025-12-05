@@ -17,14 +17,13 @@ export default async function handler(req, res) {
 
     // ---- Env keys (optional) ----
     const API_KEY = process.env.API_KEY;
-    const API_VALUE = process.env.API_VALUE;
 
     try {
         // ---- Proxy the request ----
         const response = await fetch(`https://rest.coincap.io/v3/${endpoint}`, {
             headers: {
-                "Authorization": `Bearer ${API_KEY ?? ""}`,
-                "X-Custom-Value": API_VALUE ?? ""
+                "Authorization": `Bearer ${API_KEY ?? ""}`
+                
             }
         });
 
